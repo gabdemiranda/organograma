@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './compontents/Banner';
 import Form from './compontents/Form';
 import Team from './compontents/Team';
+import Footer from './compontents/Footer';
 
 function App() {
 
@@ -47,8 +48,15 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Form afterRegisteredContributor={contributor => afterNewRegisteredContributor(contributor)} />
-      { teams.map(team => <Team key={team.name} name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor} />) }
+      <Form teams={teams.map(team => team.name)} afterRegisteredContributor={contributor => afterNewRegisteredContributor(contributor)} />
+      {teams.map(team => <Team
+        key={team.name}
+        name={team.name}
+        primaryColor={team.primaryColor}
+        secondaryColor={team.secondaryColor}
+        contributors={contributors.filter(contributor => contributor.team === team.name)}
+      />)}
+      <Footer />
     </div>
   );
 }

@@ -6,16 +6,6 @@ import './Form.css'
 
 const Form = (props) => {
 
-  const teams = [
-    'Programação',
-    'Front-End',
-    'Data Science',
-    'Devops',
-    'UX e Design',
-    'Mobile',
-    'Inovação e Gestão'
-  ]
-
   const [name, setName] = useState('')
   const [occupation, setOccupation] = useState('')
   const [image, setImage] = useState('')
@@ -23,12 +13,16 @@ const Form = (props) => {
 
   const onSave = (event) => {
     event.preventDefault();
-    props.afterRegisteredColaborator({
+    props.afterRegisteredContributor({
       name,
       image,
       occupation,
       team
     })
+    setName('')
+    setOccupation('')
+    setImage('')
+    setTeam('')
   }
 
   return (
@@ -57,7 +51,7 @@ const Form = (props) => {
         />
         <SelectDropdown
           required={true}
-          itens={teams}
+          itens={props.teams}
           label="Time"
           value={team}
           afterChange={value => setTeam(value)}
