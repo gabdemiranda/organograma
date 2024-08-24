@@ -1,19 +1,19 @@
-.contributor {
+.colaborador {
     width: 280px;
 }
 
-.contributor .card-top {
-    background-color:  var(--team-bg-color);
+.colaborador .cabecalho {
+    background-color:  #F0F0F0;
     border-radius: 10px 10px 0px 0px;
 }
-.contributor img {
+.colaborador img {
     width: 100px;
     border-radius: 50%;
     position: relative;
     bottom: -50px;
 }
 
-.contributor .card-bottom {
+.colaborador .rodape {
     background: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
@@ -21,7 +21,7 @@
     padding-bottom: 40px;
 }
 
-.contributor .card-bottom h4 {
+.colaborador .rodape h4 {
     color: #6278F7;
     font-size: 18px;
     line-height: 22px;
@@ -29,7 +29,7 @@
     margin-bottom: 8px;
 }
 
-.contributor .card-bottom h5 {
+.colaborador .rodape h5 {
     font-size: 18px;
     line-height: 22px;
     color: #212121;
